@@ -147,14 +147,11 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"fieldList": [
-									"itemName"
-								],
-								"storeSettings": {
-									"type": "AzureBlobStorageReadSettings",
-									"recursive": true,
-									"enablePartitionDiscovery": false
+								"dataset": {
+									"referenceName": "crc_src_loop",
+									"type": "DatasetReference"
 								},
+								"fieldList": [],
 								"formatSettings": {
 									"type": "BinaryReadSettings"
 								}
