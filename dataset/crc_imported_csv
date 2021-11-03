@@ -1,0 +1,195 @@
+{
+    "name": "crc_imported_csv",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "adfetlsa",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "crc crm"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "AllQCC_CareGapFile_CRM_102521.csv",
+                "container": "crmcrc"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "orgclass",
+                "type": "String"
+            },
+            {
+                "name": "QCC Name",
+                "type": "String"
+            },
+            {
+                "name": "Practice Name",
+                "type": "String"
+            },
+            {
+                "name": "PCP Name",
+                "type": "String"
+            },
+            {
+                "name": "Pt MRN",
+                "type": "String"
+            },
+            {
+                "name": "HeI EMPI",
+                "type": "String"
+            },
+            {
+                "name": "Patient Last Name",
+                "type": "String"
+            },
+            {
+                "name": "Patient First Name",
+                "type": "String"
+            },
+            {
+                "name": "Patient DOB",
+                "type": "String"
+            },
+            {
+                "name": "Current Risk Score",
+                "type": "String"
+            },
+            {
+                "name": "Risk Priority",
+                "type": "String"
+            },
+            {
+                "name": "Home",
+                "type": "String"
+            },
+            {
+                "name": "Work",
+                "type": "String"
+            },
+            {
+                "name": "Cell",
+                "type": "String"
+            },
+            {
+                "name": "e-mail",
+                "type": "String"
+            },
+            {
+                "name": "Insurance Payer",
+                "type": "String"
+            },
+            {
+                "name": "Last PCP Visit Date",
+                "type": "String"
+            },
+            {
+                "name": "Last AWV Visit Date",
+                "type": "String"
+            },
+            {
+                "name": "Next Appointment Date",
+                "type": "String"
+            },
+            {
+                "name": "Care Manager Name 1",
+                "type": "String"
+            },
+            {
+                "name": "HealtheCare Program Name 1",
+                "type": "String"
+            },
+            {
+                "name": "Care Manager Name 2",
+                "type": "String"
+            },
+            {
+                "name": "HealtheCare Program Name 2",
+                "type": "String"
+            },
+            {
+                "name": "Count of Gaps",
+                "type": "String"
+            },
+            {
+                "name": "Colorectal Cancer Screening",
+                "type": "String"
+            },
+            {
+                "name": "Cervical Cancer Screening",
+                "type": "String"
+            },
+            {
+                "name": "Breast Cancer Screening",
+                "type": "String"
+            },
+            {
+                "name": "HbA1c Monitoring",
+                "type": "String"
+            },
+            {
+                "name": "Nephropathy",
+                "type": "String"
+            },
+            {
+                "name": "Eye Exam",
+                "type": "String"
+            },
+            {
+                "name": "Statin Therapy - Diabetic Group",
+                "type": "String"
+            },
+            {
+                "name": "Adherence for Diabetes Meds",
+                "type": "String"
+            },
+            {
+                "name": "Flu Vac Current Season",
+                "type": "String"
+            },
+            {
+                "name": "Pneumo Vac Older Adults",
+                "type": "String"
+            },
+            {
+                "name": "HbA1c Control < 8",
+                "type": "String"
+            },
+            {
+                "name": "BP Control < 140/90",
+                "type": "String"
+            },
+            {
+                "name": "Peds Immun Status",
+                "type": "String"
+            },
+            {
+                "name": "Peds Lead Testing",
+                "type": "String"
+            },
+            {
+                "name": "Peds Dev Screen",
+                "type": "String"
+            },
+            {
+                "name": "Peds Well Child 0-15 mos",
+                "type": "String"
+            },
+            {
+                "name": "Peds Well Child 3-6 yrs",
+                "type": "String"
+            },
+            {
+                "name": "Peds Annual Office Visit",
+                "type": "String"
+            }
+        ]
+    }
+}
