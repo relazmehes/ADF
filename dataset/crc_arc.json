@@ -1,0 +1,21 @@
+{
+    "name": "crc_arc.json",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "adfetlsa",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "crc crm"
+        },
+        "annotations": [],
+        "type": "Binary",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "folderPath": "archive",
+                "container": "crmcrcarch"
+            }
+        }
+    }
+}
