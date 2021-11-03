@@ -1,5 +1,5 @@
 {
-    "name": "crc_arc.json",
+    "name": "crc_arc",
     "properties": {
         "linkedServiceName": {
             "referenceName": "adfetlsa",
