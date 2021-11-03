@@ -37,11 +37,447 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"disableMetricsCollection": false,
 						"writeBehavior": "insert"
 					},
-					"enableStaging": false
-				}
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "orgclass",
+									"type": "String"
+								},
+								"sink": {
+									"name": "orgclass",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "QCC Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QCC_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Practice Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Practice_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PCP Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PCP_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pt MRN",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Pt_MRN",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HeI EMPI",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HeI_EMPI",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Patient Last Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Patient_Last_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Patient DOB",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Patient_DOB",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Patient First Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Patient_First_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Current Risk Score",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Current_Risk_Score",
+									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"name": "Risk Priority",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Risk_Priority",
+									"type": "Byte"
+								}
+							},
+							{
+								"source": {
+									"name": "Home",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Home",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Work",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Work",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cell",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Cell",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "e-mail",
+									"type": "String"
+								},
+								"sink": {
+									"name": "e_mail",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Insurance Payer",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Insurance_Payer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Last PCP Visit Date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Last_PCP_Visit_Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Last AWV Visit Date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Last_AWV_Visit_Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Next Appointment Date",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Next_Appointment_Date",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "Care Manager Name 1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Care_Manager_Name_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HealtheCare Program Name 1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HealtheCare_Program_Name_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Care Manager Name 2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Care_Manager_Name_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HealtheCare Program Name 2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HealtheCare_Program_Name_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Count of Gaps",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Count_of_Gaps",
+									"type": "Int16"
+								}
+							},
+							{
+								"source": {
+									"name": "Colorectal Cancer Screening",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Colorectal_Cancer_Screening",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cervical Cancer Screening",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Cervical_Cancer_Screening",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Breast Cancer Screening",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Breast_Cancer_Screening",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HbA1c Monitoring",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HbA1c_Monitoring",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nephropathy",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Nephropathy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Eye Exam",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Eye_Exam",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Statin Therapy - Diabetic Group",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Statin_Therapy_Diabetic_Group",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Adherence for Diabetes Meds",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Adherence_for_Diabetes_Meds",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Flu Vac Current Season",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Flu_Vac_Current_Season",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Pneumo Vac Older Adults",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Pneumo_Vac_Older_Adults",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HbA1c Control < 8",
+									"type": "String"
+								},
+								"sink": {
+									"name": "HbA1c_Control_8",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "BP Control < 140/90",
+									"type": "String"
+								},
+								"sink": {
+									"name": "BP_Control_140_90",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Immun Status",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Immun_Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Lead Testing",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Lead_Testing",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Dev Screen",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Dev_Screen",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Well Child 0-15 mos",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Well_Child_0_15_mos",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Well Child 3-6 yrs",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Well_Child_3_6_yrs",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Peds Annual Office Visit",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Peds_Annual_Office_Visit",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "crc_imported_csv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "crc_db",
+						"type": "DatasetReference"
+					}
+				]
 			},
 			{
 				"name": "spMonthlyUpdateDatabase",
