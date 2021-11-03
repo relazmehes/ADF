@@ -1,0 +1,20 @@
+{
+    "name": "crc_src",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "adfetlsa",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "crc crm"
+        },
+        "annotations": [],
+        "type": "Binary",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "container": "crmcrc"
+            }
+        }
+    }
+}
