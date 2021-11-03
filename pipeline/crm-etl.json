@@ -628,13 +628,22 @@
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						}
+						"type": "BinarySink"
 					},
 					"enableStaging": false
-				}
+				},
+				"inputs": [
+					{
+						"referenceName": "crc_src",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "crc_arc",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"variables": {
