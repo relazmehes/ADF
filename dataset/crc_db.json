@@ -1,0 +1,19 @@
+{
+    "name": "crc_db",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "prerem_db_qa",
+            "type": "LinkedServiceReference"
+        },
+        "folder": {
+            "name": "crc crm"
+        },
+        "annotations": [],
+        "type": "AzureSqlTable",
+        "schema": [],
+        "typeProperties": {
+            "schema": "dbo",
+            "table": "InputSpreadsheet"
+        }
+    }
+}
