@@ -13,6 +13,12 @@
 						"dependencyConditions": [
 							"Succeeded"
 						]
+					},
+					{
+                        			"activity": "recreate-table-inputspreadsheet",
+						"dependencyConditions": [
+						    "Succeeded"
+						]
 					}
 				],
 				"policy": {
@@ -644,7 +650,68 @@
 						"type": "DatasetReference"
 					}
 				]
-			}
+			},
+			    {
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+				    {
+					"activity": "import-file",
+					"dependencyConditions": [
+					    "Succeeded"
+					]
+				    }
+				],
+				"policy": {
+				    "timeout": "7.00:00:00",
+				    "retry": 0,
+				    "retryIntervalInSeconds": 30,
+				    "secureOutput": false,
+				    "secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+				    "storedProcedureName": "[dbo].[MonthlyUpdate01Backup]",
+				    "storedProcedureParameters": {
+					"InputSpreadsheet": {
+					    "value": "[dbo].[InputSpreadsheet]",
+					    "type": "String"
+					}
+				    }
+				},
+				"linkedServiceName": {
+				    "referenceName": "prerem_dev",
+				    "type": "LinkedServiceReference"
+				}
+			    },
+			    {
+				"name": "recreate-table-inputspreadsheet",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+				    "timeout": "7.00:00:00",
+				    "retry": 0,
+				    "retryIntervalInSeconds": 30,
+				    "secureOutput": false,
+				    "secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+				    "source": {
+					"type": "AzureSqlSource",
+					"sqlReaderQuery": {
+					    "value": "DROP TABLE [dbo].[InputSpreadSheet];\nSET ANSI_NULLS ON;\n\nSET QUOTED_IDENTIFIER ON;\n\nCREATE TABLE [dbo].[ztest](\n\t[orgclass] [nvarchar](50) NULL,\n\t[QCC_Name] [nvarchar](90) NULL,\n\t[Practice_Name] [nvarchar](90) NULL,\n\t[PCP_Name] [nvarchar](90) NULL,\n\t[Pt_MRN] [nvarchar](90) NULL,\n\t[HeI_EMPI] [nvarchar](90) NULL,\n\t[Patient_Last_Name] [nvarchar](90) NULL,\n\t[Patient_First_Name] [nvarchar](90) NULL,\n\t[Patient_DOB] [date] NULL,\n\t[Current_Risk_Score] [float] NULL,\n\t[Risk_Priority] [tinyint] NULL,\n\t[Home] [nvarchar](25) NULL,\n\t[Work] [nvarchar](25) NULL,\n\t[Cell] [nvarchar](25) NULL,\n\t[e_mail] [nvarchar](90) NULL,\n\t[Insurance_Payer] [nvarchar](90) NULL,\n\t[Last_PCP_Visit_Date] [date] NULL,\n\t[Last_AWV_Visit_Date] [date] NULL,\n\t[Next_Appointment_Date] [date] NULL,\n\t[Care_Manager_Name_1] [nvarchar](90) NULL,\n\t[HealtheCare_Program_Name_1] [nvarchar](90) NULL,\n\t[Care_Manager_Name_2] [nvarchar](90) NULL,\n\t[HealtheCare_Program_Name_2] [nvarchar](90) NULL,\n\t[Count_of_Gaps] [tinyint] NULL,\n\t[Colorectal_Cancer_Screening] [nvarchar](50) NULL,\n\t[Cervical_Cancer_Screening] [nvarchar](50) NULL,\n\t[Breast_Cancer_Screening] [nvarchar](50) NULL,\n\t[HbA1c_Monitoring] [nvarchar](50) NULL,\n\t[Nephropathy] [nvarchar](50) NULL,\n\t[Eye_Exam] [nvarchar](50) NULL,\n\t[Statin_Therapy_Diabetic_Group] [nvarchar](50) NULL,\n\t[Adherence_for_Diabetes_Meds] [nvarchar](50) NULL,\n\t[Flu_Vac_Current_Season] [nvarchar](50) NULL,\n\t[Pneumo_Vac_Older_Adults] [nvarchar](50) NULL,\n\t[HbA1c_Control_8] [nvarchar](50) NULL,\n\t[BP_Control_140_90] [nvarchar](50) NULL,\n\t[Peds_Immun_Status] [nvarchar](50) NULL,\n\t[Peds_Lead_Testing] [nvarchar](50) NULL,\n\t[Peds_Dev_Screen] [nvarchar](50) NULL,\n\t[Peds_Well_Child_0_15_mos] [nvarchar](50) NULL,\n\t[Peds_Well_Child_3_6_yrs] [nvarchar](50) NULL,\n\t[Peds_Annual_Office_Visit] [nvarchar](50) NULL,\n\t[Diabetes_Composite] [nvarchar](50) NULL,\n\t[Medicare_AWV] [nvarchar](50) NULL\n) ON [PRIMARY]\n\nselect 1 as x\n",
+					    "type": "Expression"
+					},
+					"queryTimeout": "02:00:00",
+					"partitionOption": "None"
+				    },
+				    "dataset": {
+					"referenceName": "crc_prerem_dev",
+					"type": "DatasetReference"
+				    }
+				}
+			    }
 		],
 		"variables": {
 			"spreadsheetName": {
